@@ -1,0 +1,9 @@
+{
+  getProducts {
+    title
+    modelNo
+    features
+    category
+    image
+  }
+}
