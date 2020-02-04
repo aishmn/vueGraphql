@@ -1,0 +1,54 @@
+type User {
+  _id: ID
+  username: String!
+  email: String!
+  mobile: String
+  image: String
+  password: String!
+  joinedDate: String
+  joinDate: String
+  isAdmin: Boolean
+  isDealer: Boolean
+  isReseller: Boolean
+}
+
+type Product {
+  _id: ID
+  title: String!
+  modelNo: String!
+  features: String
+  category: String!
+  addedDate: String
+  mrpPrice: String!
+  resellerPrice: String!
+  dppPrice: String!
+  image: String
+}
+type Category {
+  title: String!
+  description: String
+}
+
+type Price {
+  dppPrice: String!
+  mrpPrice: String!
+  resellerPrice: String!
+}
+
+type Mutation {
+  signUpUser(username: String!, email: String!, password: String!): User!
+  addProduct(
+    title: String!
+    modelNo: String!
+    category: String!
+    features: String
+    image: String!
+    dppPrice: String!
+    mrpPrice: String!
+    resellerPrice: String!
+  ): Product!
+}
+
+type Query {
+  getProducts: [Product]
+}
